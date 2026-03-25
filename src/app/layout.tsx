@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Epilogue } from "next/font/google";
 import "./globals.css";
 import { envConfig } from "@/config";
-import localFont from "next/font/local"
+import localFont from "next/font/local";
+import Navbar from "@/components/shared/Navbar";
 
 const epilogue = Epilogue({
   subsets: ["latin"],
@@ -66,7 +67,10 @@ export default function RootLayout({
       lang="en"
       className={`${epilogue.className} ${clashDispaly.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
