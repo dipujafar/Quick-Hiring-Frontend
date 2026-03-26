@@ -7,7 +7,8 @@
 @theme {
   --color-primary-color: #4640de;
   --color-secondary-color: #26a4ff;
-  --color-primay-gray: #515b6f;
+  --color-primary-gray: #515b6f;
+  --color-primary-black: #25324B;
   --font-clash: var(--font-clash);
 }
 

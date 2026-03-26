@@ -4,6 +4,7 @@ import "./globals.css";
 import { envConfig } from "@/config";
 import localFont from "next/font/local";
 import Navbar from "@/components/shared/Navbar";
+import NextTopLoader from "nextjs-toploader";
 
 const epilogue = Epilogue({
   subsets: ["latin"],
@@ -68,8 +69,22 @@ export default function RootLayout({
       className={`${epilogue.className} ${clashDispaly.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Navbar />
+        {/* <Navbar /> */}
         {children}
+
+         <NextTopLoader
+            color="#4640DE"
+            initialPosition={0.08}
+            crawlSpeed={200}
+            height={3}
+            crawl={true}
+            showSpinner={true}
+            easing="ease"
+            speed={200}
+            shadow="0 0 10px #232323,0 0 5px #EA5326"
+            zIndex={1600}
+            showAtBottom={false}
+          />
       </body>
     </html>
   );

@@ -1,7 +1,12 @@
-import Image from "next/image";
+import Companies from "@/components/modules/home/companies/Companies";
+import Dashboard from "@/components/modules/home/dashboard/Dashboard";
+import Header from "@/components/modules/home/header/Header";
 
 export default function Home() {
-  return (
-    <h1>hello</h1>
+  return (<>
+    <Header />
+    <Companies />
+    <Dashboard />
+  </>
   );
 }
