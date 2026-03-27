@@ -1,0 +1,72 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import React, { useCallback, useRef, useState } from "react";
+import { UseFormRegister, FieldErrors, RegisterOptions, Path } from "react-hook-form";
+import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
+import { Input } from "./input";
+
+interface PasswordInputProps<T extends Record<string, any>> {
+    name: Path<T>;
+    label: string;
+    placeholder?: string;
+    register: UseFormRegister<T>;
+    errors: FieldErrors<T>;
+    isLarge?: boolean;
+    validationRules: RegisterOptions<T, Path<T>>;
+}
+
+const PasswordInput = <T extends Record<string, any>>({
+    name,
+    label,
+    placeholder = "Enter password",
+    register,
+    errors,
+    isLarge = false,
+    validationRules,
+}: PasswordInputProps<T>) => {
+
+    const { ref, ...rest } = register(name, validationRules);
+
+    const [isVisible, setIsVisible] = useState<boolean>(false);
+    const inputRef = useRef<HTMLInputElement | null>(null);
+
+    const handleVisible = useCallback(() => {
+        setIsVisible((prev) => !prev);
+    }, []);
+
+    return (
+        <>
+            <label htmlFor={name} className={`mb-1.5 font-epilogue block text-black ${!isLarge ? "text-sm" : ""}`}>
+                {label}
+                <span className="text-red-500 text-base ml-1">*</span>
+            </label>
+            <div className="relative">
+                <Input
+                    type={isVisible ? "text" : "password"}
+                    id={name}
+                    placeholder={placeholder}
+                    {...rest}
+                    ref={(e) => {
+                        ref(e); // connect RHF ref
+                        inputRef.current = e; // also store local ref
+                    }}
+                    className={`pr-10 w-full ${!isLarge ? "rounded-sm" : "rounded"} border  bg-white py-2.5 px-4 text-black outline-none transition disabled:cursor-default disabled:bg-whiter dark:bg-form-input font-epilogue placeholder:font-epilogue ${errors?.[name]
+                        ? "border-danger"
+                        : "border-strokeinput focus:border-black active:border-black"
+                        } ${!isLarge ? "text-sm" : ""}`}
+                />
+                <div className="absolute right-0 inset-y-0 flex items-center cursor-pointer" onClick={handleVisible}>
+                    {!isVisible ? (
+                        <IoEyeOffOutline className="text-gray-800 text-xl mr-3" />
+                    ) : (
+                        <IoEyeOutline className="text-gray-800 text-xl mr-3" />
+                    )}
+                </div>
+            </div>
+            
+        </>
+    );
+};
+
+PasswordInput.displayName = "PasswordInput";
+
+export default PasswordInput;

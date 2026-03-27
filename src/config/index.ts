@@ -1,4 +1,5 @@
 export const envConfig = {
-    baseUrl: process.env.NEXT_PUBLIC_BACKEND_BASE_URL,
-    frontendUrl: process.env.NEXT_PUBLIC_FRONTEND_BASE_URL,
-}
+  serverBaseApi: process.env.NEXt_PUBLIC_SERVER_BASE_API,
+  clientBaseApi: process.env.NEXT_PUBLIC_BASE_API,
+  hasSSL: process.env.NEXT_PUBLIC_HAS_SSL == "true" ? true : false,
+};

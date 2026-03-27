@@ -3,9 +3,9 @@ import { Epilogue } from "next/font/google";
 import "./globals.css";
 import { envConfig } from "@/config";
 import localFont from "next/font/local";
-import Navbar from "@/components/shared/Navbar";
 import NextTopLoader from "nextjs-toploader";
-import Footer from "@/components/shared/Footer";
+import { ToastContainer } from "react-toastify";
+import ReduxProvider from "@/lib/ReduxProvider";
 
 const epilogue = Epilogue({
   subsets: ["latin"],
@@ -36,14 +36,14 @@ export const metadata: Metadata = {
     "Web Development",
     "App Development",
   ],
-  metadataBase: new URL(envConfig.frontendUrl as string),
+  metadataBase: new URL(envConfig.clientBaseApi as string),
   openGraph: {
     title: "QuickHire - Find Your Perfect Job ",
     description:
       "The offical job portal of Bangladesh — find full-time, part-time, remote, and freelance jobs. Connect with top employers and apply instantly.",
-    url: envConfig.frontendUrl,
+    url: envConfig.clientBaseApi as string,
     siteName: "QuickHire",
-    images: [`${envConfig.frontendUrl}/og-image.png`],
+    images: [`${envConfig.clientBaseApi}/og-image.png`],
     type: "website",
   },
 
@@ -70,9 +70,23 @@ export default function RootLayout({
       className={`${epilogue.className} ${clashDispaly.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        {/* <Navbar /> */}
-        {children}
-        <Footer />
+
+        <ReduxProvider>
+          {children}
+        </ReduxProvider>
+
+        <ToastContainer
+          position="top-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick={false}
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+        />
 
         <NextTopLoader
           color="#4640DE"

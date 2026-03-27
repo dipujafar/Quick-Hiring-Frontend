@@ -1,0 +1,26 @@
+"use client"
+import { ChevronLeft } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { useSidebar } from "@/components/ui/sidebar";
+
+export function SidebarToggle() {
+
+    const { open, setOpen: setIsOpen } = useSidebar();
+
+    return (
+        <Button
+            onClick={() => setIsOpen(!open)}
+            className="rounded w-8 h-8"
+            variant="outline"
+            size="icon"
+        >
+            <ChevronLeft
+                className={cn(
+                    "h-4 w-4 transition-transform ease-in-out duration-700",
+                    open === false ? "rotate-180" : "rotate-0"
+                )}
+            />
+        </Button>
+    );
+}
