@@ -49,8 +49,8 @@ function AdminSidebar() {
                         routs.map(rout => {
                             return <SidebarMenu key={rout?.id}>
                                 <SidebarMenuItem>
-                                    <SidebarMenuButton tooltip={"item.title"} asChild className={`px-5 py-5 font-epilogue ${currentPath == rout?.route ? "bg-primary text-white hover:bg-primary hover:text-white" : ""}`}>
-                                        <Link href={rout?.route} className="font-epilogue font-medium">
+                                    <SidebarMenuButton tooltip={"item.title"} asChild className={`px-5 py-5 rounded-none  ${currentPath == rout?.route ? "bg-primary-color  text-white hover:bg-primary-color  hover:text-white" : ""}`}>
+                                        <Link href={rout?.route} className="font-medium">
                                             {rout?.icon}
                                             <span>{rout?.name}</span>
                                         </Link>

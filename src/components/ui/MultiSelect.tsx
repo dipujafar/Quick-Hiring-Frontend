@@ -54,7 +54,7 @@ export default function MultipleSelect<T extends FieldValues>({
                 return (
                     <Popover open={open} onOpenChange={setOpen}>
                         <PopoverTrigger asChild>
-                            <Button variant="outline" role="combobox" aria-expanded={open} className={`w-full justify-between bg-white font-epilogue shadow-none rounded font-normal text-sm py-[22px] ${errors?.[name]?.message ? "border-danger" : ""}`}>
+                            <Button variant="outline" role="combobox" aria-expanded={open} className={`w-full justify-between bg-white  shadow-none rounded font-normal text-sm py-[22px] ${errors?.[name]?.message ? "border-danger" : ""}`}>
                                 {isLoading ? <span className="loader"></span> : selectedValues.length > 0 ? `${selectedValues.length} selected` : placeholder}
                                 <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                             </Button>
@@ -66,7 +66,7 @@ export default function MultipleSelect<T extends FieldValues>({
                                     <CommandEmpty>No options found.</CommandEmpty>
                                     <CommandGroup>
                                         {items.map((item) => (
-                                            <CommandItem key={item.value} onSelect={() => handleSelect(item.value)} className="hover:bg-zinc-100 duration-150 font-epilogue">
+                                            <CommandItem key={item.value} onSelect={() => handleSelect(item.value)} className="hover:bg-zinc-100 duration-150 ">
                                                 <Check
                                                     className={cn(
                                                         "mr-2 h-4 w-4",

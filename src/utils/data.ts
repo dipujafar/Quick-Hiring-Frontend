@@ -8,13 +8,125 @@ import businessIcon from "@/assets/images/category/business_icon.png";
 import hrIcon from "@/assets/images/category/human_resources.png";
 import { TCategory } from "@/types/";
 
-export const categories: TCategory[] = [
-  { id: 1, title: "Design", icon: designIcon, available_jobs: 235 },
-  { id: 2, title: "Sales", icon: salesIcon, available_jobs: 756 },
-  { id: 3, title: "Marketing", icon: marketingIcon, available_jobs: 140 },
-  { id: 4, title: "Finance", icon: financeIcon, available_jobs: 325 },
-  { id: 5, title: "Technology", icon: technologyIcon, available_jobs: 436 },
-  { id: 6, title: "Engineering", icon: engineeringIcon, available_jobs: 542 },
-  { id: 7, title: "Business", icon: businessIcon, available_jobs: 211 },
-  { id: 8, title: "Human Resource", icon: hrIcon, available_jobs: 346 },
+export const jobsCategories: TCategory[] = [
+  {
+    id: 1,
+    title: "Design",
+    icon: designIcon,
+    available_jobs: 235,
+    className: "bg-pink-100 text-pink-500",
+  },
+  {
+    id: 2,
+    title: "Sales",
+    icon: salesIcon,
+    available_jobs: 756,
+    className: "bg-yellow-100 text-yellow-600",
+  },
+  {
+    id: 3,
+    title: "Marketing",
+    icon: marketingIcon,
+    available_jobs: 140,
+    className: "bg-orange-100 text-orange-500",
+  },
+  {
+    id: 4,
+    title: "Finance",
+    icon: financeIcon,
+    available_jobs: 325,
+    className: "bg-purple-100 text-purple-500",
+  },
+  {
+    id: 5,
+    title: "Technology",
+    icon: technologyIcon,
+    available_jobs: 436,
+    className: "bg-red-500/10 text-red-500",
+  },
+  {
+    id: 6,
+    title: "Engineering",
+    icon: engineeringIcon,
+    available_jobs: 542,
+    className: "bg-blue-100 text-blue-500",
+  },
+  {
+    id: 7,
+    title: "Business",
+    icon: businessIcon,
+    available_jobs: 211,
+    className: "bg-primary/10 text-primary",
+  },
+  {
+    id: 8,
+    title: "Human Resource",
+    icon: hrIcon,
+    available_jobs: 346,
+    className: "bg-teal-100 text-teal-600",
+  },
+];
+
+export const placeHolderBlurImg =
+  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEWnpaaXiDhOAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII=";
+
+export const divisions = [
+  { id: 1, name: "Dhaka" },
+  { id: 2, name: "Chattogram" },
+  { id: 3, name: "Rajshahi" },
+  { id: 4, name: "Khulna" },
+  { id: 5, name: "Barishal" },
+  { id: 6, name: "Sylhet" },
+  { id: 7, name: "Rangpur" },
+  { id: 8, name: "Mymensingh" },
+];
+
+export const educations = [
+  { id: 60, name: "Bachelor's Degree", value: "BSC" },
+  { id: 61, name: "Master's Degree", value: "MSC" },
+  { id: 62, name: "Diploma", value: "Diploma" },
+  { id: 63, name: "PhD / Doctorate", value: "Phd" },
+];
+
+export const categories = [
+  {
+    id: 1,
+    label: "Desing",
+    value: "DESIGN",
+  },
+  {
+    id: 2,
+    label: "Sales",
+    value: "SALES",
+  },
+  {
+    id: 3,
+    label: "Marketing",
+    value: "MARKETING",
+  },
+  {
+    id: 4,
+    label: "Finance",
+    value: "FINANCE",
+  },
+  {
+    id: 5,
+    label: "Technology",
+    value: "TECHNOLOGY",
+  },
+  {
+    id: 6,
+    label: "Engineering",
+    value: "ENGINEERING",
+  },
+  {
+    id: 7,
+    label: "Business",
+    value: "BUSINESS",
+  },
+  {
+    id: 8,
+    label: "Human Resource",
+    value: "HUMAN_RESOURCE",
+  },
 ];

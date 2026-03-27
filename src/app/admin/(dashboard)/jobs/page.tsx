@@ -2,7 +2,7 @@
 import { GetJobs } from "@/lib/actions/jobs.action";
 import { Suspense } from "react";
 import { ImSpinner8 } from "react-icons/im";
-import PostJob from "../applications/_components/PostJob";
+import PostJob from "../../_components/PostJob";
 import JobsTable from "./_components/JobsTable";
 
 async function JobsPage({
@@ -28,13 +28,13 @@ async function JobsPage({
   return (
     <div className="">
       <div className="flex flex-row justify-between items-center gap-x-5 mb-5">
-        <h3 className="font-medium font-epilogue text-xl">All Jobs</h3>
+        <h3 className="font-medium  text-xl">All Jobs</h3>
         <PostJob />
       </div>
       <div>
         <Suspense fallback={<div>
           <div className='min-h-40 flex items-center justify-center'>
-            <ImSpinner8 className="text-4xl text-primary animate-spin" />
+            <ImSpinner8 className="text-4xl text-primary-color  animate-spin" />
           </div>
         </div>}>
           <JobsTable jobPromise={jobPromise} page={Number(page)} />

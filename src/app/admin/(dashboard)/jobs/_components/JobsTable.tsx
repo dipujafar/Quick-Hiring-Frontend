@@ -6,7 +6,7 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
-import emptyDataImg from '../../../../public/empty_data.jpg'
+import emptyDataImg from '@/assets/images/empty_data.jpg'
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -28,22 +28,22 @@ async function JobsTable({ jobPromise, page }: { jobPromise: Promise<{ data: { d
 
     return (
         <div className="pb-8">
-            <Table className="font-epilogue">
-                <TableHeader className="bg-primary/5 font-epilogue ">
+            <Table className="">
+                <TableHeader className="bg-primary/5  ">
                     <TableRow className="border border-stroke">
-                        <TableHead className="p-5 font-medium font-epilogue">Title</TableHead>
-                        <TableHead className="font-medium font-epilogue">Category</TableHead>
-                        <TableHead className="font-medium font-epilogue">Company</TableHead>
-                        <TableHead className="font-medium font-epilogue">Location</TableHead>
-                        <TableHead className="font-medium font-epilogue">Dedline</TableHead>
-                        <TableHead className="font-medium font-epilogue">Status</TableHead>
-                        <TableHead className="text-right font-epilogue p-5">Action</TableHead>
+                        <TableHead className="p-5 font-medium ">Title</TableHead>
+                        <TableHead className="font-medium ">Category</TableHead>
+                        <TableHead className="font-medium ">Company</TableHead>
+                        <TableHead className="font-medium ">Location</TableHead>
+                        <TableHead className="font-medium ">Dedline</TableHead>
+                        <TableHead className="font-medium ">Status</TableHead>
+                        <TableHead className="text-right  p-5">Action</TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody className="border border-stroke">
                     {jobs?.data?.data.map((job) => (
 
-                        <TableRow key={job?.id}>
+                        <TableRow key={job?._id}>
 
                             <TableCell>
                                 {job?.title ?? "N/A"}
@@ -52,7 +52,7 @@ async function JobsTable({ jobPromise, page }: { jobPromise: Promise<{ data: { d
                             <TableCell className=''>{job?.category}</TableCell>
 
                             <TableCell>
-                                {job?.company?.name}
+                                {job?.company}
                             </TableCell>
 
                             <TableCell>{job?.division ?? "N/A"}</TableCell>
@@ -73,10 +73,10 @@ async function JobsTable({ jobPromise, page }: { jobPromise: Promise<{ data: { d
                                             <HiOutlineDotsVertical className="text-lg" />
                                         </button>
                                     </DropdownMenuTrigger>
-                                    <DropdownMenuContent className="z-40 bg-white font-epilogue min-w-40" align="end" >
+                                    <DropdownMenuContent className="z-40 bg-white  min-w-40" align="end" >
 
                                         <DropdownMenuItem asChild className="hover:bg-zinc-100 duration-150">
-                                            <FeatureJob jobId={job?.id} />
+                                            <FeatureJob jobId={job?._id} />
                                         </DropdownMenuItem>
 
                                         <DropdownMenuItem asChild className="hover:bg-zinc-100 duration-150 w-full">
@@ -84,7 +84,7 @@ async function JobsTable({ jobPromise, page }: { jobPromise: Promise<{ data: { d
                                         </DropdownMenuItem>
 
                                         <DropdownMenuItem asChild className="hover:bg-zinc-100 duration-150">
-                                            <DeleteAJob jobId={job?.id} />
+                                            <DeleteAJob jobId={job?._id} />
                                         </DropdownMenuItem>
 
                                     </DropdownMenuContent>
@@ -101,12 +101,12 @@ async function JobsTable({ jobPromise, page }: { jobPromise: Promise<{ data: { d
             {
                 jobs?.data?.meta?.total <= 0 && <section className='min-h-60 flex flex-col items-center justify-center'>
                     <Image src={emptyDataImg} className='h-28 w-auto mx-auto' alt='empty data' />
-                    <h5 className='text-base font-epilogue text-center'>No Job posted yet</h5>
+                    <h5 className='text-base  text-center'>No Job posted yet</h5>
                 </section>
             }
 
             {jobs?.data?.meta?.total > 0 && <div className="mt-3">
-                <SearchParamsPagination totalData={jobs?.data?.meta?.total || 1} activePage={Number(page) || 1} />
+                <SearchParamsPagination totalData={jobs?.data?.meta?.totalPage || 1} activePage={Number(page) || 1} />
             </div>}
 
         </div >

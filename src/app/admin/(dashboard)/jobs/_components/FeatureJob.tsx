@@ -35,7 +35,7 @@ function FeatureJob({ jobId }: { jobId: string }) {
     }
 
     return (
-        <button onClick={() => handleFeature(jobId)} className='w-full text-left hover:bg-zinc-100 duration-150 flex flex-row gap-x-2 items-center px-2 py-1.5 rounded font-epilogue'>
+        <button onClick={() => handleFeature(jobId)} className='w-full text-left hover:bg-zinc-100 duration-150 flex flex-row gap-x-2 items-center px-2 py-1.5 rounded '>
             <FaRegStar className='text-black' />
             <span className='text-sm'>Feature</span>
         </button>

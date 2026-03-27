@@ -53,12 +53,12 @@ function DeleteAJob({ jobId }: { jobId: string }) {
         <>
             <AlertDialog open={open} onOpenChange={setOpen}>
                 <AlertDialogTrigger asChild>
-                    <button className='w-full text-left hover:bg-zinc-100 duration-150 flex flex-row gap-x-2 items-center px-2 py-1.5 rounded font-epilogue'>
+                    <button className='w-full text-left hover:bg-zinc-100 duration-150 flex flex-row gap-x-2 items-center px-2 py-1.5 rounded '>
                         <Trash2 className='text-red-500 size-4' />
                         <span className='text-sm'>Delete</span>
                     </button>
                 </AlertDialogTrigger>
-                <AlertDialogContent className='font-epilogue'>
+                <AlertDialogContent className=''>
                     <AlertDialogHeader>
                         <AlertDialogTitle>Delete Job Posting?</AlertDialogTitle>
                         <AlertDialogDescription>
@@ -70,7 +70,7 @@ function DeleteAJob({ jobId }: { jobId: string }) {
                         <button
                             onClick={() => handleDlt(jobId)}
                             disabled={isLoading}
-                            className='disabled:cursor-not-allowed flex flex-row gap-x-2 items-center bg-primary hover:bg-primary/80 duration-150 text-white px-4 py-2 rounded-md text-sm font-medium'
+                            className='disabled:cursor-not-allowed flex flex-row gap-x-2 items-center bg-primary-color  hover:bg-primary/80 duration-150 text-white px-4 py-2 rounded-md text-sm font-medium'
                         >
                             {isLoading && <ImSpinner2 className="text-base text-white animate-spin" />}
                             <span>{isLoading ? 'Loading...' : "Continue"}</span>

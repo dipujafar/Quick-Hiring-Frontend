@@ -57,7 +57,7 @@ export default function JobSearchBar() {
         {/* Location button */}
         <button
           onClick={handleLocationClick}
-          className="flex-1 flex items-center gap-2 text-[15px]  hover:text-primary transition-colors whitespace-nowrap focus:outline-none text-primary-black"
+          className="flex-1 flex items-center gap-2 text-[15px]  hover:text-primary-color  transition-colors whitespace-nowrap focus:outline-none text-primary-black"
         >
           <MapPin className="w-4 h-4 shrink-0" />
           <span>{location}</span>
@@ -92,7 +92,7 @@ export default function JobSearchBar() {
         {/* Location row */}
         <button
           onClick={handleLocationClick}
-          className="flex items-center gap-3 py-4 text-[15px] text-foreground hover:text-primary transition-colors focus:outline-none w-full"
+          className="flex items-center gap-3 py-4 text-[15px] text-foreground hover:text-primary-color  transition-colors focus:outline-none w-full"
         >
           <MapPin className="w-4 h-4 text-primary-black shrink-0" />
           <span className="flex-1 text-left text-primary-black">{location}</span>

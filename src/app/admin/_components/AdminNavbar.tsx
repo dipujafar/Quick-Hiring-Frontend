@@ -26,7 +26,7 @@ function AdminNavbar() {
           onClick={handleLogout}
           variant="ghost"
           size="sm"
-          className="flex items-center gap-2 hover:border border-stroke"
+          className="flex items-center gap-2 hover:border border-stroke rounded-none"
         >
           <LogOut className="h-4 w-4" />
           Logout

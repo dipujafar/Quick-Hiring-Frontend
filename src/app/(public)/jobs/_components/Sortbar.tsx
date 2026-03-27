@@ -1,0 +1,65 @@
+"use client"
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select"
+import { useUpdateMultipleSearchParams } from "@/hooks/UseUpdateSearchPrams";
+
+
+function SortBar({ limit = "21", sort = "createdAt" }: { limit?: string, sort?: string }) {
+
+    const updateMultipleSearchParam = useUpdateMultipleSearchParams();
+
+
+    return (
+
+        <div className="flex items-center gap-2">
+
+            <div className="flex items-center border border-stroke md:px-2.5 px-1 rounded-md">
+                <span className="text-sm ">Limit:</span>
+                <Select
+                    // value={limit?.toString()}
+                    defaultValue={limit}
+                onValueChange={(value) => updateMultipleSearchParam({ "limit": value })}
+                >
+                    <SelectTrigger className="border-none shadow-none focus-visible:ring-0 px-2 truncate  cursor-pointer">
+                        <SelectValue placeholder={limit?.toString()} />
+                    </SelectTrigger>
+                    <SelectContent className="">
+                        <SelectItem value="21">21</SelectItem>
+                        <SelectItem value="40">40</SelectItem>
+                        <SelectItem value="50">50</SelectItem>
+                        <SelectItem value="60">60</SelectItem>
+                        <SelectItem value="80">80</SelectItem>
+                        <SelectItem value="100">100</SelectItem>
+                    </SelectContent>
+                </Select>
+            </div>
+
+            {/* <div className="md:flex items-center  border border-stroke md:px-2.5 px-1 rounded-md hidden">
+                <span className="text-sm truncate ">Sort by:</span>
+                <Select
+                    defaultValue={sort}
+                    onValueChange={(value) => updateMultipleSearchParam({"sort": value})}
+                >
+                    <SelectTrigger className="h-8 border-none shadow-none focus-visible:ring-0 px-2  cursor-pointer">
+                        <SelectValue placeholder={sort?.toString()}/>
+                    </SelectTrigger>
+                    <SelectContent className="">
+                        <SelectItem value="-createdAt">New post</SelectItem>
+                        <SelectItem value="createdAt">Old post</SelectItem>
+                        <SelectItem value="price">Price: Low to High</SelectItem>
+                        <SelectItem value="-price">Price: High to Low</SelectItem>
+                    </SelectContent>
+                </Select>
+            </div> */}
+
+
+        </div>
+    )
+}
+
+export default SortBar

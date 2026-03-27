@@ -1,4 +1,3 @@
-import { IMeta, JobApplication } from '../../../../types/job';
 import moment from "moment"
 import {
     Table,
@@ -9,8 +8,9 @@ import {
     TableRow,
 } from "@/components/ui/table"
 import Image from 'next/image';
-import emptyDataImg from '../../../../public/empty_data.jpg'
-import SearchParamsPagination from '@/components/Jobs/SearchParamsPagination';
+import emptyDataImg from '@/assets/images/empty_data.jpg'
+import { IMeta, JobApplication } from "@/types";
+import SearchParamsPagination from "@/components/shared/SearchParamsPagination";
 
 async function ApplicationTable({ applicationPromise, page }: { applicationPromise: Promise<{ data: { data: JobApplication[], meta: IMeta } }>, page: number }) {
 
@@ -18,20 +18,20 @@ async function ApplicationTable({ applicationPromise, page }: { applicationPromi
 
     return (
         <div className="pb-8 pt-5">
-            <Table className="font-epilogue">
-                <TableHeader className="bg-primary/5 font-epilogue ">
+            <Table className="">
+                <TableHeader className="bg-primary/5  ">
                     <TableRow className="border border-stroke">
-                        <TableHead className="p-5 font-medium font-epilogue">Job Title</TableHead>
-                        <TableHead className="font-medium font-epilogue">Name</TableHead>
-                        <TableHead className="font-medium font-epilogue">Email</TableHead>
-                        <TableHead className="font-medium font-epilogue">Resume Link</TableHead>
-                        <TableHead className="font-medium font-epilogue">AppliedAt</TableHead>
+                        <TableHead className="p-5 font-medium ">Job Title</TableHead>
+                        <TableHead className="font-medium ">Name</TableHead>
+                        <TableHead className="font-medium ">Email</TableHead>
+                        <TableHead className="font-medium ">Resume Link</TableHead>
+                        <TableHead className="font-medium ">AppliedAt</TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody className="border border-stroke">
                     {applications?.data?.data.map((application) => (
 
-                        <TableRow key={application?.id}>
+                        <TableRow key={application?._id}>
 
                             <TableCell>
                                 {application?.job?.title ?? "N/A"}
@@ -56,7 +56,7 @@ async function ApplicationTable({ applicationPromise, page }: { applicationPromi
             {
                 applications?.data?.meta?.total <= 0 && <section className='min-h-60 flex flex-col items-center justify-center'>
                     <Image src={emptyDataImg} className='h-28 w-auto mx-auto' alt='empty data' />
-                    <h5 className='text-base font-epilogue text-center'>No Job posted yet</h5>
+                    <h5 className='text-base  text-center'>No Job posted yet</h5>
                 </section>
             }
 

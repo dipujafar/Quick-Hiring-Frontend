@@ -2,6 +2,7 @@
 import { GetApplications } from '@/lib/actions/jobs.action';
 import  { Suspense } from 'react'
 import { ImSpinner8 } from 'react-icons/im';
+import ApplicationTable from './_components/ApplicationTable';
 
 async function ApplicationPage({
   searchParams: ssp,
@@ -26,12 +27,12 @@ async function ApplicationPage({
   return (
     <div className="">
 
-      <h3 className="font-medium font-epilogue text-xl">All Applications</h3>
+      <h3 className="font-medium  text-xl">All Applications</h3>
 
       <div>
         <Suspense fallback={<div>
           <div className='min-h-40 flex items-center justify-center'>
-            <ImSpinner8 className="text-4xl text-primary animate-spin" />
+            <ImSpinner8 className="text-4xl text-primary-color animate-spin" />
           </div>
         </div>}>
           <ApplicationTable applicationPromise={applicationPromise} page={Number(page)} />

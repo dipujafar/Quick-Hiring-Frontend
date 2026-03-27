@@ -8,7 +8,7 @@ export const jobFeature = async ({ payload, endPoint, tags }: { payload: FormDat
     const res = await serverQueryWithReauth({ payload, endPoint, method : "PATCH" });
 
     for (const tag of tags) {
-        revalidateTag(tag, "max");
+        revalidateTag(tag, "default");
     }
 
     return res;

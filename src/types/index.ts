@@ -5,6 +5,7 @@ export type TCategory = {
   title: string;
   icon: StaticImageData;
   available_jobs: number;
+  className: string;
 };
 
 
@@ -30,19 +31,11 @@ export type ApplicationStatus = "PENDING" | "REVIEWED" | "ACCEPTED" | "REJECTED"
 
 // ─── Core Types ───────────────────────────────────────────────────────────────
 
-export interface Company {
-    id: string;
-    name: string;
-    logo: string | null;
-    website: string | null;
-    location: string | null;
-    jobs?: Job[];
-    createdAt: string; // ISO 8601 date string
-}
 
 export interface Job {
-    id: string;
+    _id: string;
     title: string;
+    thumbnailIcon: string;
     description: string;
     responsibilities: string;
     requirements: string;
@@ -59,7 +52,7 @@ export interface Job {
     job_type: string;
     employment_type: string;
     companyId: string;
-    company?: Company;
+    company: string;
     applications?: string[];
     status: JobStatus;
     deadline: string; // ISO 8601 date string
@@ -68,7 +61,7 @@ export interface Job {
 }
 
 export interface JobApplication {
-    id: string;
+    _id: string;
     name  :string,
     email : string
     resumeUrl: string | null;

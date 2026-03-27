@@ -8,9 +8,9 @@ export default function Dashboard() {
         <Container className="w-full py-8">
             <div className="bg-primary-color py-20 px-16 relative space-y-3 md:space-y-5 h-125 md:h-auto">
                 <h4 className="font-clash font-semibold text-3xl md:text-5xl text-white max-w-sm">Start posting jobs today</h4>
-                <p className="font-epilogue text-sm md:text-base text-gray-100 font-medium">Start posting jobs for only $10.</p>
+                <p className=" text-sm md:text-base text-gray-100 font-medium">Start posting jobs for only $10.</p>
                 <div className="mt-8 md:mt-10">
-                    <Link href={"/sign-in"} className='text-base cursor-pointer text-primary-color border-0 bg-white px-6 py-5 font-epilogue font-bold'>
+                    <Link href={"/sign-in"} className='text-base cursor-pointer text-primary-color border-0 bg-white px-6 py-5  font-bold'>
                         Sign Up For Free
                     </Link>
                 </div>

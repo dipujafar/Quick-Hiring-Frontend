@@ -65,7 +65,7 @@ export default function Pagination({
           onClick={() => handlePageChange(i)}
           className={cn(
             "h-9 w-9 rounded-md flex items-center justify-center text-sm transition-colors",
-            currentPage === i ? "bg-primary text-white" : "hover:bg-gray-200",
+            currentPage === i ? "bg-primary-color  text-white" : "hover:bg-gray-200",
           )}
           aria-current={currentPage === i ? "page" : undefined}
         >
