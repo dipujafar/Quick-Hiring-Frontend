@@ -8,7 +8,7 @@ type TProps = {
 }
 export default function SectionTitle({ title, linkText, link }: TProps) {
     return (
-        <div className="flex-between items-center border border-red-400 flex-wrap">
+        <div className="flex-between items-center flex-wrap">
             <h2 className="md:text-5xl text-[32px] font-semibold font-clash text-primary-black">{title?.split(" ")[0]} <span className="text-secondary-color">{title?.split(" ")?.slice(1)?.join(" ")}</span></h2>
 
             {link && linkText && <div className="flex gap-x-3 text-primary-color font-semibold group">
