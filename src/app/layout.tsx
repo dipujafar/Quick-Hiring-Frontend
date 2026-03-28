@@ -5,7 +5,7 @@ import { envConfig } from "@/config";
 import localFont from "next/font/local";
 import NextTopLoader from "nextjs-toploader";
 import { ToastContainer } from "react-toastify";
-
+import ReduxProvider from "@/lib/provider/ReduxProvider";
 
 const epilogue = Epilogue({
   subsets: ["latin"],
@@ -70,8 +70,7 @@ export default function RootLayout({
       className={`${epilogue.className} ${clashDispaly.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-
-        {children}
+        <ReduxProvider>{children}</ReduxProvider>
 
         <ToastContainer
           position="top-center"
