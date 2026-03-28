@@ -27,11 +27,11 @@ export default function Error({
                     </svg>
                     <div>
                         <p className="text-lg  text-gray-900">Something went wrong</p>
-                        <p className='text-base  text-primary-color'>{error?.message}</p>
+                        <p className='text-base  text-primary-color '>{error?.message}</p>
                     </div>
                 </div>
                 <button
-                    className='bg-primary-color px-4 py-2 rounded-sm text-white  hover:bg-opacity-90 duration-200 mx-auto'
+                    className='bg-primary-color  px-4 py-2 rounded-sm text-white  hover:bg-opacity-90 duration-200 mx-auto'
                     onClick={
                         () => reset()
                     }
