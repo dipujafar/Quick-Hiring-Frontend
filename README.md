@@ -119,6 +119,7 @@ Make sure you have the following installed:
 
 - [Node.js](https://nodejs.org/) `v18+`
 - [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/) or [pnpm](https://pnpm.io/)
+- Live Link  [QuickHiring Frontend](http://206.162.244.154:3000)
 - Backend server running — see [QuickHiring Backend](http://206.162.244.154:7128)
 
 ---
