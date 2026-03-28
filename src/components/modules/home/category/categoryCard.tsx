@@ -1,3 +1,4 @@
+"use client";
 import AnimatedArrow from "@/components/animation/AnimatedArrow";
 import { TCategory } from "@/types";
 import Image from "next/image";
