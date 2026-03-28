@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function CategoryCard({ category }: { category: TCategory }) {
   return (
-    <Link href={`/jobs?category=${category?.title}`}>
+    <Link href={`/jobs?category=${category?.value}`}>
       <div className="border border-[#D6DDEB] p-5 md:p-8 space-y-2 md:space-y-3 hover:bg-primary-color duration-200 group flex  md:flex-col gap-x-6">
         <Image
           src={category?.icon}
@@ -17,7 +17,7 @@ export default function CategoryCard({ category }: { category: TCategory }) {
           placeholder='blur' blurDataURL={'/blurImage.jpg'}
         />
         <div className=" flex-1">
-          <h6 className="font-clash font-semibold text-lg md:text-xl text-primary-black group-hover:text-white truncate">
+          <h6 className="font-clash font-semibold text-lg md:text-xl text-primary-black group-hover:text-white capitalize truncate">
             {category?.title}
           </h6>
           <div className="flex  justify-between md:justify-start gap-4 group-hover:text-gray-200">

@@ -4,6 +4,7 @@ export type TCategory = {
   id: number;
   title: string;
   icon: StaticImageData;
+  value: JobCategory;
   available_jobs: number;
   className: string;
 };

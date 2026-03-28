@@ -12,6 +12,7 @@ export const jobsCategories: TCategory[] = [
   {
     id: 1,
     title: "Design",
+    value: "DESIGN",
     icon: designIcon,
     available_jobs: 235,
     className: "bg-pink-100 text-pink-500",
@@ -19,6 +20,7 @@ export const jobsCategories: TCategory[] = [
   {
     id: 2,
     title: "Sales",
+    value: "SALES",
     icon: salesIcon,
     available_jobs: 756,
     className: "bg-yellow-100 text-yellow-600",
@@ -26,6 +28,7 @@ export const jobsCategories: TCategory[] = [
   {
     id: 3,
     title: "Marketing",
+    value: "MARKETING",
     icon: marketingIcon,
     available_jobs: 140,
     className: "bg-orange-100 text-orange-500",
@@ -33,6 +36,7 @@ export const jobsCategories: TCategory[] = [
   {
     id: 4,
     title: "Finance",
+    value: "FINANCE",
     icon: financeIcon,
     available_jobs: 325,
     className: "bg-purple-100 text-purple-500",
@@ -40,6 +44,7 @@ export const jobsCategories: TCategory[] = [
   {
     id: 5,
     title: "Technology",
+    value: "TECHNOLOGY",
     icon: technologyIcon,
     available_jobs: 436,
     className: "bg-red-500/10 text-red-500",
@@ -47,6 +52,7 @@ export const jobsCategories: TCategory[] = [
   {
     id: 6,
     title: "Engineering",
+    value: "ENGINEERING",
     icon: engineeringIcon,
     available_jobs: 542,
     className: "bg-blue-100 text-blue-500",
@@ -54,6 +60,7 @@ export const jobsCategories: TCategory[] = [
   {
     id: 7,
     title: "Business",
+    value: "BUSINESS",
     icon: businessIcon,
     available_jobs: 211,
     className: "bg-primary-color/10 text-primary",
@@ -61,6 +68,7 @@ export const jobsCategories: TCategory[] = [
   {
     id: 8,
     title: "Human Resource",
+    value: "HUMAN_RESOURCE",
     icon: hrIcon,
     available_jobs: 346,
     className: "bg-teal-100 text-teal-600",

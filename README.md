@@ -119,7 +119,7 @@ Make sure you have the following installed:
 
 - [Node.js](https://nodejs.org/) `v18+`
 - [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/) or [pnpm](https://pnpm.io/)
-- Backend server running — see [QuickHiring Backend](https://github.com/dipujafar/quick_hiring_backend.git)
+- Backend server running — see [QuickHiring Backend](http://206.162.244.154:7128)
 
 ---
 
@@ -149,7 +149,7 @@ Create a `.env` file in the root of the project:
 NEXT_PUBLIC_BASE_API=http://localhost:3001
 
 # Used for SSR server-side fetch (not exposed to browser)
-NEXT_PUBLIC_SERVER_BASE_API=http://10.10.10.78:5000/api/v1
+SERVER_BASE_API=http://206.162.244.154:7128/api/v1
 
 
 # -----------------------------------------------
