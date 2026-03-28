@@ -33,7 +33,7 @@ async function Jobs({ adsPromise, page, limit, sort }: { adsPromise: Promise<{ d
 
             {
                 data?.data?.meta?.total <= 0 && <section className='min-h-[calc(25vh)] flex flex-col items-center justify-center'>
-                    <Image src={"/empty_data.jpg"} height={1000} width={1000} className='h-28 w-auto mx-auto' alt='empty data' />
+                    <Image src={"/empty_data.jpg"} height={1000} width={1000} className='h-28 w-auto mx-auto' alt='empty data' placeholder='blur' blurDataURL={'/blurImage.jpg'} />
                     <h5 className='text-base  text-center'>{"Job Not found"}</h5>
                 </section>
             }

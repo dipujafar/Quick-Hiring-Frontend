@@ -38,7 +38,7 @@ function AdminSidebar() {
         <Sidebar className="shadow">
             <SidebarHeader className="py-5 relative bg-white">
                 <Link href={"/"}>
-                    <Image src={logo} alt='logo' className='h-6 md:h-7 xl:h-9 w-auto object-cover mx-auto' />
+                    <Image src={logo} alt='logo' className='h-6 md:h-7 xl:h-9 w-auto object-cover mx-auto' placeholder='blur' blurDataURL={'/blurImage.jpg'} />
                 </Link>
             </SidebarHeader>
 

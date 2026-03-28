@@ -17,7 +17,7 @@ export const navLinks = [
   },
 ];
 
-function Navbar({className}: {className?: string}) {
+function Navbar({ className }: { className?: string }) {
   return (
     <div className={cn(" sticky top-0 z-50 left-0 bg-[#F8F8FD]", className)}>
       <Container>
@@ -28,6 +28,7 @@ function Navbar({className}: {className?: string}) {
                 src={logo}
                 alt="logo"
                 className="h-8 md:h-8 xl:h-9 w-auto object-cover"
+                placeholder='blur' blurDataURL={'/blurImage.jpg'}
               />
             </Link>
 

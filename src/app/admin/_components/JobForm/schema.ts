@@ -1,7 +1,7 @@
 import { z } from "zod";
 export const jobSchema = z.object({
   thumbnailIcon: z
-    .any()
+    .any({ required_error: "Thumbnail image is required" })
     .refine(
       (f) => f instanceof File && f.size > 0,
       "Thumbnail image is required",

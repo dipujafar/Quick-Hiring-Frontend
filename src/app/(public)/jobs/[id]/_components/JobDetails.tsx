@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import ApplyJob from './ApplyJob';
 import moment from 'moment';
 import { Job } from '@/types';
+import Container from '@/components/shared/Container';
 
 async function JobDetails({ jobPromise }: { jobPromise: Promise<{ data: Job }> }) {
 
@@ -18,20 +19,20 @@ async function JobDetails({ jobPromise }: { jobPromise: Promise<{ data: Job }> }
     { label: "Category", value: (job: Job) => job?.category },
     { label: "Salary", value: (job: Job) => job?.salaryMin ?? "N/A" },
     { label: "Experience", value: (job: Job) => job?.experience ?? "N/A" },
-    { label: "Gender", value: (job: Job) => job?.gender?.join(", ") ?? "N/A" },
-    { label: "Education", value: (job: Job) => job?.education?.join(", ") ?? "N/A" },
+    { label: "Gender", value: (job: Job) => job?.gender ?? "N/A" },
+    { label: "Education", value: (job: Job) => job?.education ?? "N/A" },
     { label: "Posted", value: (job: Job) => { return moment(job?.createdAt).format("DD/MM/YY h:mm a") } },
     { label: "Application End", value: (job: Job) => job?.deadline ?? "N/A" },
   ];
 
   return (
-    <div className='container'>
+    <Container>
       {/* -----------header--------- */}
       <div className='p-10 bg-[#F8F8FD] my-10 rounded-2xl'>
         <div className='flex flex-col md:flex-row gap-5 justify-between items-center'>
 
           <div className='flex flex-col md:flex-row justify-center md:justify-start gap-8 items-center'>
-            <Image src={job?.data?.thumbnailIcon} alt='Company Logo' height={1000} width={1000} className='h-28 w-auto rounded-lg' />
+            <Image src={job?.data?.thumbnailIcon} alt='Company Logo' height={1000} width={1000} className='h-28 w-auto rounded-lg' placeholder='blur' blurDataURL={'/blurImage.jpg'} />
             <div className='space-y-2 md:text-left text-center'>
               <h3 className='font-clash font-semibold text-2xl text-neutral'>{job?.data?.title}</h3>
               <p className='text-primary-color text-lg  font-medium'>{job?.data?.company}</p>
@@ -101,7 +102,7 @@ async function JobDetails({ jobPromise }: { jobPromise: Promise<{ data: Job }> }
         </section>
 
       </div>
-    </div>
+    </Container>
   )
 }
 

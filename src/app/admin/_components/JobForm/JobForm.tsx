@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { useRef, useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -31,6 +32,7 @@ import { postNewJob, updateJob } from "@/lib/actions/post.action";
 import { categories, divisions, educations } from "@/utils/data";
 import AnimatedArrow from "@/components/animation/AnimatedArrow";
 import { EMPTY_DEFAULTS, FieldType, jobSchema } from "./schema";
+import { getFirstErrorMessage } from "@/utils/modifyFormError";
 
 const inputClass =
   "bg-gray-100 py-5 rounded-none border-0 border-b border-gray-300 focus-visible:ring-0 focus-visible:border-b-2 focus-visible:border-primary-color transition-all duration-200 placeholder:text-gray-400";
@@ -120,10 +122,15 @@ export default function JobForm({ defaultData }: { defaultData?: Job }) {
     }
   };
 
+  const onError = (errors: any) => {
+    const firstErrorMessage = getFirstErrorMessage(errors);
+    toast.error(firstErrorMessage);
+  };
+
   // ─── Render ────────────────────────────────────────────────────────────────
   return (
     <Form {...form}>
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+      <form onSubmit={handleSubmit(onSubmit, onError)} className="space-y-6">
         {/* ── Thumbnail Upload (top-center) ── */}
         <FormField
           control={control}
@@ -141,10 +148,9 @@ export default function JobForm({ defaultData }: { defaultData?: Job }) {
                   relative w-36 h-36 rounded-2xl border-2 border-dashed cursor-pointer
                   flex flex-col items-center justify-center gap-2
                   transition-colors duration-200 overflow-hidden group
-                  ${
-                    fieldState.error
-                      ? "border-gray-500 bg-gray-50"
-                      : "border-border hover:border-primary/60 bg-muted/30 hover:bg-muted/50"
+                  ${fieldState.error
+                    ? "border-gray-500 bg-gray-50"
+                    : "border-border hover:border-primary/60 bg-muted/30 hover:bg-muted/50"
                   }
                 `}
               >

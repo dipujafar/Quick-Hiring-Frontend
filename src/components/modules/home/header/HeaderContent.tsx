@@ -27,7 +27,7 @@ export default function HeaderContent() {
                         <CCountUp start={0} end={5000} duration={4} className="xl:text-7xl md:text-6xl text-5xl font-medium font-clash " /> +
                         <span>Jobs</span>
                     </div>
-                    <Image src={lineImage} alt="line" />
+                    <Image src={lineImage} alt="line"  placeholder='blur' blurDataURL={'/blurImage.jpg'}/>
                 </motion.p>
             </div>
             <motion.p key="hero-description"

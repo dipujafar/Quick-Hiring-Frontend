@@ -13,7 +13,7 @@ export default function Footer() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5  md:flex-row ">
                         <div className="col-span-2">
                             <Link href={"/"}>
-                                <Image src={logo} alt='logo' className='h-12 w-auto object-cover mb-10' />
+                                <Image src={logo} alt='logo' className='h-12 w-auto object-cover mb-10' placeholder='blur' blurDataURL={'/blurImage.jpg'} />
                             </Link>
                             <p className="mt-[18px] text-[15px] font-normal text-[#D6DDEB]">Great platform for the job seeker that passionate about startups. Find your dream job easier.</p>
                         </div>

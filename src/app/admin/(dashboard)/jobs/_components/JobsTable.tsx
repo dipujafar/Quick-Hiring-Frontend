@@ -100,7 +100,7 @@ async function JobsTable({ jobPromise, page }: { jobPromise: Promise<{ data: { d
             </Table>
             {
                 jobs?.data?.meta?.total <= 0 && <section className='min-h-60 flex flex-col items-center justify-center'>
-                    <Image src={emptyDataImg} className='h-28 w-auto mx-auto' alt='empty data' />
+                    <Image src={emptyDataImg} className='h-28 w-auto mx-auto' alt='empty data' placeholder='blur' blurDataURL={'/blurImage.jpg'} />
                     <h5 className='text-base  text-center'>No Job posted yet</h5>
                 </section>
             }

@@ -46,6 +46,7 @@ export default function Companies() {
                             src={logo?.img}
                             alt="logo"
                             className="h-8 w-auto mx-6"
+                            placeholder='blur' blurDataURL={'/blurImage.jpg'}
                         />
                     ))}
                 </Marquee>

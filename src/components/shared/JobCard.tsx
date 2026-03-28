@@ -24,7 +24,7 @@ function JobCard({ job }: { job: Job }) {
                 {/* Top row: logo + job type */}
                 <div className="flex justify-between items-start">
                     <div className="h-10 w-10 relative ">
-                        <Image src={thumbnailIcon} alt={"Company image"} fill className="object-contain rounded-full" />
+                        <Image src={thumbnailIcon} alt={"Company image"} fill className="object-contain rounded-full" placeholder='blur' blurDataURL={'/blurImage.jpg'} />
                     </div>
                     <span className="text-sm font-normal text-primary-color border border-primary-color px-3 py-1 ">
                         {job_type}

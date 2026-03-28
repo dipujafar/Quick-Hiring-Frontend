@@ -13,6 +13,7 @@ export default function CategoryCard({ category }: { category: TCategory }) {
           width={500}
           alt="icon"
           className="h-10 md:h-12 w-fit mb-3 md:mb-8 group-hover:brightness-0 group-hover:invert"
+          placeholder='blur' blurDataURL={'/blurImage.jpg'}
         />
         <div className=" flex-1">
           <h6 className="font-clash font-semibold text-lg md:text-xl text-primary-black group-hover:text-white truncate">

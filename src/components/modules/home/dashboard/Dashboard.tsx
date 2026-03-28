@@ -27,7 +27,7 @@ export default function Dashboard() {
                     border-l-100 border-l-transparent">
                 </div>
 
-                <Image src={dashboard} alt="dashboard image" className="absolute bottom-0 left-5 md:left-auto md:right-5 lg:left-auto lg:right-10 xl:right-16 h-56 md:h-60 lg:h-82.5 w-auto z-10" />
+                <Image src={dashboard} alt="dashboard image" className="absolute bottom-0 left-5 md:left-auto md:right-5 lg:left-auto lg:right-10 xl:right-16 h-56 md:h-60 lg:h-82.5 w-auto z-10" placeholder='blur' blurDataURL={'/blurImage.jpg'} />
             </div>
         </Container>
     )

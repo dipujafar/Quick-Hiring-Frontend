@@ -39,6 +39,7 @@ async function LatestJobsRoot() {
           src={pattern}
           alt="Pattern"
           className="h-full w-auto absolute top-0 right-0 md:-right-10 lg:-right-20 z-0"
+          placeholder='blur' blurDataURL={'/blurImage.jpg'}
         />
       </Container>
     </div>
@@ -77,6 +78,7 @@ const LatestJobs = async ({
                   alt={"Company image"}
                   fill
                   className="object-contain rounded-full"
+                  placeholder='blur' blurDataURL={'/blurImage.jpg'}
                 />
               </div>
 

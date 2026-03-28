@@ -22,11 +22,11 @@ export default function Header() {
                     <HeaderContent />
                 </div>
                 <div className='absolute right-4 md:right-16 lg:right-24  xl:right-32 bottom-0 w-full z-0 hidden md:block'>
-                    <Image src={hero_image} alt="hero_image" placeholder='blur' blurDataURL={hero_image.src} className='max-w-[35%]  ml-auto w-fit' />
+                    <Image src={hero_image} alt="hero_image"  className='max-w-[35%]  ml-auto w-fit' placeholder='blur' blurDataURL={'/blurImage.jpg'}  />
                 </div>
             </Container>
             <div className='absolute right-0 bottom-0 w-full z-0 hidden md:block'>
-                <Image src={shape_image} alt="hero" className='max-w-[35%]  ml-auto w-fit' />
+                <Image src={shape_image} alt="hero" className='max-w-[35%]  ml-auto w-fit' placeholder='blur' blurDataURL={'/blurImage.jpg'} />
             </div>
         </div>
     )

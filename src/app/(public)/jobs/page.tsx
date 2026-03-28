@@ -54,13 +54,14 @@ async function JobsPage({
     category,
   } = await ssp;
 
-  let sortBy = "createdAt";
+  const sortBy = "createdAt";
   let orderBy = "desc";
 
   if (sort == "-createdAt") {
     orderBy = "asc";
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const query: any = { page, sortBy, sortOrder: orderBy, limit: 21 };
 
   if (division) {
