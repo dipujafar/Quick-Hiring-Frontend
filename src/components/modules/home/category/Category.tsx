@@ -28,7 +28,7 @@ export default function Category() {
 
  function CategoryCard({ category }: { category: TCategory }) {
   return (
-    <Link href={`/jobs?category=${category?.title}`}>
+    <Link href={`/jobs?category=${category?.value}`}>
       <div className="border border-[#D6DDEB] p-5 md:p-8 space-y-2 md:space-y-3 hover:bg-primary-color duration-200 group flex  md:flex-col gap-x-6">
         <Image
           src={category?.icon}
