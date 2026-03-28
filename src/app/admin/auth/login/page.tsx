@@ -1,6 +1,7 @@
 
 import { Metadata } from "next";
 import LoginForm from "./_components/LoginForm";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Admin Login",
@@ -13,7 +14,9 @@ const LoginPage = () => {
 
       <div className="w-full">
         <div className="bg-white max-w-md border border-stroke rounded shadow p-8 mx-auto">
-          <LoginForm />
+          <Suspense fallback={<div>Loading...</div>}>
+            <LoginForm />
+          </Suspense>
         </div>
       </div>
 

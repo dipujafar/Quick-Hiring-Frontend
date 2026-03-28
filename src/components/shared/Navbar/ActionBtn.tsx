@@ -5,8 +5,6 @@ import Cookies from "js-cookie";
 
 export default function ActionBtn() {
     const isLoggedIn = Cookies.get("accessToken");
-    console.log(isLoggedIn);
-    console.log(isLoggedIn);
     return (
         <div>
             {isLoggedIn ? <Link href={"/admin"}> <button className="cursor-pointer text-white border-0 bg-primary-color hover:bg-primary/80 duration-200 px-5 py-3  font-bold">

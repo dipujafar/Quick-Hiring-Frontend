@@ -58,12 +58,12 @@ async function JobsPage({
 
 
 
-  
+
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const query: any = { limit: 21 };
 
-  if(page){
+  if (page) {
     query.page = page
   }
 
@@ -107,12 +107,15 @@ async function JobsPage({
         <div className=" py-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-8 xl:grid-cols-4 gap-5 container py-5">
             <div className="lg:col-span-2 xl:col-span-1 hidden lg:block">
-              <JobFilter />
+              <Suspense fallback={<div>Loading...</div>}>
+                <JobFilter />
+              </Suspense>
             </div>
             <div className="col-span-1 md:col-span-2 lg:col-span-6 xl:col-span-3">
               <div>
-                <Searchbar />
-
+                <Suspense fallback={<div>Loading...</div>}>
+                  <Searchbar />
+                </Suspense>
                 <Suspense
                   fallback={
                     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 mt-5">

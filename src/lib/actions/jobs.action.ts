@@ -22,7 +22,6 @@ export const GetJobs = async ({
       },
     );
 
-    console.log(response);
     if (!response.ok) {
       const errorData = await response.json().catch(() => null);
 

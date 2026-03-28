@@ -26,7 +26,6 @@ function JobFilter() {
 
     const updateQueryParam = useCallback(
         (key: string, value: string, targetId?: string) => {
-            console.log(key, value)
             const currentValues = searchParams.get(key)?.split(",") || [];
 
             let newValues: string[];

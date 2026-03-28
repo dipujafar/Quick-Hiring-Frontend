@@ -26,7 +26,6 @@ const GetFeatureJobs = async () => {
                 },
             }
         );
-        console.log(response);
         if (!response.ok) {
             // This will activate the closest `error.js` Error Boundary
             throw new Error("Failed to load data");

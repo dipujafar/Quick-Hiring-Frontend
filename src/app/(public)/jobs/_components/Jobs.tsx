@@ -11,8 +11,6 @@ async function Jobs({ adsPromise, page, limit, sort }: { adsPromise: Promise<{ d
 
     const data = await adsPromise;
 
-    console.log(data)
-
     return (
         <div>
 
