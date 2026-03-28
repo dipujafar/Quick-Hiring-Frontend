@@ -76,7 +76,7 @@ async function JobsTable({ jobPromise, page }: { jobPromise: Promise<{ data: { d
                                     <DropdownMenuContent className="z-40 bg-white  min-w-40" align="end" >
 
                                         <DropdownMenuItem asChild className="hover:bg-zinc-100 duration-150">
-                                            <FeatureJob jobId={job?._id} />
+                                            <FeatureJob job={job} />
                                         </DropdownMenuItem>
 
                                         <DropdownMenuItem asChild className="hover:bg-zinc-100 duration-150 w-full">
@@ -86,6 +86,7 @@ async function JobsTable({ jobPromise, page }: { jobPromise: Promise<{ data: { d
                                         <DropdownMenuItem asChild className="hover:bg-zinc-100 duration-150">
                                             <DeleteAJob jobId={job?._id} />
                                         </DropdownMenuItem>
+                                        
 
                                     </DropdownMenuContent>
                                 </DropdownMenu>

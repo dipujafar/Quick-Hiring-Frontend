@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { IoSearchOutline } from "react-icons/io5";
 import { MdLocationOn } from "react-icons/md";
@@ -61,7 +62,7 @@ const Search = ({
 
       <button
         type="submit"
-        className="bg-primary-color text-white px-3 py-2 rounded  cursor-pointer hover:opacity-70 duration-200 rounded-none"
+        className="bg-primary-color text-white px-3 py-2   cursor-pointer hover:opacity-70 duration-200 rounded-none"
       >
         Search
       </button>

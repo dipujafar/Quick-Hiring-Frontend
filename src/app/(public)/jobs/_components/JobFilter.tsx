@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/preserve-manual-memoization */
 "use client"
 import {
     Accordion,
@@ -58,7 +59,7 @@ function JobFilter() {
         <div className="space-y-5">
 
             {/* ------------- job type filter--------- */}
-            <Accordion type="single" collapsible className="bg-white px-4 rounded-lg border border-stroke" defaultValue="Job Type">
+            <Accordion type="single" collapsible className="bg-white px-4 rounded-none border border-stroke" defaultValue="Job Type">
                 <AccordionItem value="Job Type">
                     <AccordionTrigger className="text-lg font-popin font-medium hover:no-underline cursor-pointer">Job Type</AccordionTrigger>
                     <AccordionContent className="border-t border-stroke pt-4 space-y-3">
@@ -76,7 +77,7 @@ function JobFilter() {
             </Accordion>
 
             {/* ------------- employment type filter--------- */}
-            <Accordion type="single" collapsible className="bg-white px-4 rounded-lg border border-stroke" defaultValue="bike_type">
+            <Accordion type="single" collapsible className="bg-white px-4 rounded-none border border-stroke" defaultValue="bike_type">
                 <AccordionItem value="bike_type">
                     <AccordionTrigger className="text-lg  font-medium hover:no-underline cursor-pointer">Employment Type</AccordionTrigger>
                     <AccordionContent className="border-t border-stroke pt-4 space-y-3">
@@ -94,7 +95,7 @@ function JobFilter() {
             </Accordion>
 
             {/* --------Education-------- */}
-            <Accordion type="single" defaultValue="education" collapsible className="bg-white px-4 rounded-lg border border-stroke">
+            <Accordion type="single" defaultValue="education" collapsible className="bg-white px-4 rounded-none border border-stroke">
                 <AccordionItem value="education">
                     <AccordionTrigger className="text-lg  font-medium hover:no-underline cursor-pointer">Education</AccordionTrigger>
                     <AccordionContent className="border-t border-stroke pt-4 space-y-3">
@@ -112,7 +113,7 @@ function JobFilter() {
             </Accordion>
 
             {/* -----------category Filter------------ */}
-            <Accordion type="single" collapsible className="bg-white px-4 rounded-lg border border-stroke" defaultValue="categoryList">
+            <Accordion type="single" collapsible className="bg-white px-4 rounded-none border border-stroke" defaultValue="categoryList">
                 <AccordionItem value="categoryList">
                     <AccordionTrigger className="text-lg  font-medium hover:no-underline cursor-pointer">Categories</AccordionTrigger>
                     <AccordionContent className="border-t border-stroke pt-4 space-y-3">

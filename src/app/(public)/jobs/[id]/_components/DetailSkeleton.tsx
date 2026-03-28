@@ -1,8 +1,9 @@
+import Container from '@/components/shared/Container'
 import { Skeleton } from '@/components/ui/skeleton'
 
 export function DetailSkeleton() {
   return (
-    <div className="container bg-white p-4 md:p-8">
+    <Container className=" bg-white p-4 md:p-8">
       {/* Header Section */}
       <div className="mb-8 flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
         <div className="flex items-start gap-4">
@@ -93,7 +94,7 @@ export function DetailSkeleton() {
           </div>
         </div>
       </div>
-    </div>
+    </Container>
   )
 }
 

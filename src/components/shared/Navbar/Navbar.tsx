@@ -1,8 +1,10 @@
 import logo from "@/assets/images/logo.png";
 import Image from "next/image";
 import Link from "next/link";
-import Container from "./Container";
 import { cn } from "@/lib/utils";
+import Container from "../Container";
+import ActionBtn from "./ActionBtn";
+import SmallNavSheet from "./SmallNavSheet";
 
 export const navLinks = [
   {
@@ -48,21 +50,12 @@ function Navbar({ className }: { className?: string }) {
               })}
             </ul>
           </div>
-
           <div>
-            <div className="hidden lg:flex flex-row gap-x-2.5 md:gap-x-4 lg:gap-x-5 items-center">
-              <Link
-                href={"/admin"}
-                className=" font-bold text-primary-color hover:text-primary-color/60 duration-200"
-              >
-                Login
-              </Link>
-
-              <div className="w-px bg-[#D6DDEB] h-8"></div>
-
-              <button className="cursor-pointer text-white border-0 bg-primary-color hover:bg-primary/80 duration-200 px-5 py-3  font-bold">
-                Sign Up
-              </button>
+            <div className='hidden lg:block'>
+              <ActionBtn />
+            </div>
+            <div className="lg:hidden block">
+              <SmallNavSheet />
             </div>
           </div>
         </div>

@@ -16,7 +16,7 @@ const SmFilter = ({ filterComponent }: { filterComponent: React.ReactNode }) => 
         <div>
             <Sheet>
                 <SheetTrigger className='border border-zinc-200 p-1 md:p-1.5 rounded cursor-pointer hover:bg-zinc-100 duration-150' asChild>
-                    <button className='hover:bg-primary/10 rounded text-primary-color px-3 py-2 text-sm font-figtree font-medium cursor-default flex flex-row gap-x-3 items-center justify-between'>
+                    <button className='hover:bg-primary/10 rounded-none text-primary-color px-3 py-2 text-sm font-figtree font-medium cursor-default flex flex-row gap-x-3 items-center justify-between'>
                         <p>Filter</p>
                         <AiOutlineFilter className=' text-base' />
                     </button>

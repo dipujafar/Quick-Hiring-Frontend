@@ -8,7 +8,8 @@ import { Suspense } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import { TextTruncate } from "@/components/ui/text-truncate";
 import { envConfig } from "@/config";
-import Navbar from "@/components/shared/Navbar";
+import Navbar from "@/components/shared/Navbar/Navbar";
+
 
 export async function generateMetadata({
   params,

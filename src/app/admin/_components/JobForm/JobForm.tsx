@@ -87,7 +87,7 @@ export default function JobForm({ defaultData }: { defaultData?: Job }) {
           endPoint: `/jobs/${defaultData?._id}`,
           payload: formData as any,
         });
-        console.log(res);
+      
         if (res?.redirect) {
           router.push("/admin/auth/login");
           toast.error("Session expired. Please log in again.");
@@ -97,18 +97,21 @@ export default function JobForm({ defaultData }: { defaultData?: Job }) {
           toast.error(res.error);
           return;
         }
+        router.refresh(); 
       } else {
         const res = await postNewJob({ payload: formData as any });
-        console.log(res);
         if (res?.redirect) {
           router.push("/admin/auth/login");
           toast.error("Session expired. Please log in again.");
           return;
         }
+
         if (res?.error) {
           toast.error(res.error);
           return;
         }
+        router.refresh(); 
+
       }
 
       toast.success(`Job ${defaultData ? "updated" : "posted"} successfully!`);

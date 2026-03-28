@@ -55,22 +55,22 @@ async function JobDetails({ jobPromise }: { jobPromise: Promise<{ data: Job }> }
 
           <div className='my-8'>
             <h3 className='text-2xl font-clash font-medium mb-3 text-neutral'>Description : </h3>
-            <pre className='text-sm text-neutral/80 font-normal '>{job?.data?.description}</pre>
+            <pre className='text-sm text-neutral/80 font-normal  whitespace-pre-wrap wrap-break-word'>{job?.data?.description}</pre>
           </div>
 
           <div className='my-8'>
             <h3 className='text-2xl font-clash font-medium mb-3 text-neutral'>Responsibilities : </h3>
-            <pre className='text-sm text-neutral/80 font-normal '>{job?.data?.responsibilities}</pre>
+            <pre className='text-sm text-neutral/80 font-normal  whitespace-pre-wrap wrap-break-word'>{job?.data?.responsibilities}</pre>
           </div>
 
           <div className='my-8'>
             <h3 className='text-2xl font-clash font-medium mb-3 text-neutral'>Requirements : </h3>
-            <pre className='text-sm text-neutral/80 font-normal '>{job?.data?.requirements}</pre>
+            <pre className='text-sm text-neutral/80 font-normal  whitespace-pre-wrap wrap-break-word'>{job?.data?.requirements}</pre>
           </div>
 
           <div className='my-8'>
             <h3 className='text-2xl font-clash font-medium mb-3 text-neutral'>Benefits : </h3>
-            <pre className='text-sm text-neutral/80 font-normal '>{job?.data?.benefits}</pre>
+            <pre className='text-sm text-neutral/80 font-normal  whitespace-pre-wrap wrap-break-word'>{job?.data?.benefits}</pre>
           </div>
 
           <ApplyJob />

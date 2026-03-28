@@ -21,8 +21,8 @@ import { DeleteJob } from '@/lib/actions/post.action';
 function DeleteAJob({ jobId }: { jobId: string }) {
     const [isLoading, setLoading] = useState(false);
     const [open, setOpen] = useState(false);
-
     const router = useRouter();
+
 
     const handleDlt = async (jobId: string) => {
         setLoading(true)
@@ -41,7 +41,7 @@ function DeleteAJob({ jobId }: { jobId: string }) {
             toast.success("Job successfully deleted");
             setOpen(false);
 
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } catch (err: any) {
             toast.error(err?.data?.message || "Something went wrong, try again")
         } finally {

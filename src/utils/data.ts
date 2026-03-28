@@ -56,7 +56,7 @@ export const jobsCategories: TCategory[] = [
     title: "Business",
     icon: businessIcon,
     available_jobs: 211,
-    className: "bg-primary/10 text-primary",
+    className: "bg-primary-color/10 text-primary",
   },
   {
     id: 8,
@@ -91,7 +91,7 @@ export const educations = [
 export const categories = [
   {
     id: 1,
-    label: "Desing",
+    label: "Design",
     value: "DESIGN",
   },
   {
@@ -127,6 +127,6 @@ export const categories = [
   {
     id: 8,
     label: "Human Resource",
-    value: "HUMAN_RESOURCE",
+    value: "HUMAN RESOURCE",
   },
 ];

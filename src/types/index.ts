@@ -55,8 +55,9 @@ export interface Job {
     company: string;
     applications?: string[];
     status: JobStatus;
-    deadline: string; // ISO 8601 date string
+    deadline: string; 
     createdAt: string;
+    isFeatured?: boolean;
     updatedAt: string;
 }
 

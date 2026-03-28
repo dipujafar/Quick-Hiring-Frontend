@@ -1,21 +1,21 @@
 "use client"
 import { jobFeature } from '@/lib/actions/featureJob.action';
 import { tags } from '@/lib/tags';
+import { Job } from '@/types';
 import { useRouter } from 'next/navigation';
 import { FaRegStar } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 
-function FeatureJob({ jobId }: { jobId: string }) {
+function FeatureJob({ job }: { job: Job }) {
 
     const router = useRouter();
-
     const handleFeature = async (jobId: string) => {
         const loading = toast.loading("Loading...")
         try {
             // await addFeature({ addId }).unwrap();
-            const featuredRes = await jobFeature({ endPoint: `/jobs/feature/${jobId}`, payload: JSON.stringify({}), tags: [tags.featureJobs] });
+            const featuredRes = await jobFeature({ endPoint: `/jobs/feature/${jobId}`, payload: JSON.stringify({ isFeatured: !job?.isFeatured}), tags: [tags.featureJobs, tags.jobs] });
 
-            if (featuredRes?.redirect) {
+             if (featuredRes?.redirect) {
                 router.replace("/admin/auth/login");
                 toast.error("Session expired. Please log in again.");
                 return;
@@ -24,9 +24,9 @@ function FeatureJob({ jobId }: { jobId: string }) {
                 return;
             }
 
-            toast.success("Job successfully featured");
+            toast.success(`Job successfully ${job?.isFeatured ? "unfeatured" : "featured"}`);
 
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } catch (err: any) {
             toast.error(err?.data?.message || "Something went wrong, try again")
         } finally {
@@ -35,9 +35,9 @@ function FeatureJob({ jobId }: { jobId: string }) {
     }
 
     return (
-        <button onClick={() => handleFeature(jobId)} className='w-full text-left hover:bg-zinc-100 duration-150 flex flex-row gap-x-2 items-center px-2 py-1.5 rounded '>
+        <button onClick={() => handleFeature(job._id)} className='w-full text-left hover:bg-zinc-100 duration-150 flex flex-row gap-x-2 items-center px-2 py-1.5 rounded '>
             <FaRegStar className='text-black' />
-            <span className='text-sm'>Feature</span>
+            <span className='text-sm'>{job?.isFeatured ? "Unfeature" : "Feature"}</span>
         </button>
     )
 }

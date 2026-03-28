@@ -1,10 +1,11 @@
-import Navbar from '@/components/shared/Navbar'
+
 import bg_pattern from "@/assets/images/header/bg-pattern.png";
 import hero_image from "@/assets/images/header/hero-image.png"
 import Container from '@/components/shared/Container';
 import HeaderContent from './HeaderContent';
 import shape_image from "@/assets/images/header/shape_image.png"
 import Image from 'next/image';
+import Navbar from "@/components/shared/Navbar/Navbar";
 
 export default function Header() {
     return (

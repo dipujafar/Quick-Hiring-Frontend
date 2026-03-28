@@ -9,8 +9,9 @@ import { Suspense } from "react";
 import { Metadata } from "next";
 import PageTop from "@/components/shared/PageTop";
 import { GetJobs } from "@/lib/actions/jobs.action";
-import Navbar from "@/components/shared/Navbar";
+
 import Container from "@/components/shared/Container";
+import Navbar from "@/components/shared/Navbar/Navbar";
 
 export const metadata: Metadata = {
   title: "All Jobs",
@@ -54,15 +55,17 @@ async function JobsPage({
     category,
   } = await ssp;
 
-  const sortBy = "createdAt";
-  let orderBy = "desc";
 
-  if (sort == "-createdAt") {
-    orderBy = "asc";
-  }
+
+
+  
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const query: any = { page, sortBy, sortOrder: orderBy, limit: 21 };
+  const query: any = { limit: 21 };
+
+  if(page){
+    query.page = page
+  }
 
   if (division) {
     query.division = division;
@@ -78,7 +81,7 @@ async function JobsPage({
     query.education = education;
   }
   if (searchTerm) {
-    query.searchTerm = searchTerm;
+    query.searchTerms = searchTerm;
   }
   if (category) {
     query.category = category;

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { FaArrowRight } from "react-icons/fa";
 import Image from "next/image";
 import pattern from "@/assets/images/Pattern.png";
 import { Suspense } from "react";
@@ -15,7 +14,7 @@ async function LatestJobsRoot() {
 
   return (
     <div className="bg-[#F8F8FD]">
-      <Container className=" pt-8 relative overflow-x-hidden">
+      <Container className=" py-8 md:py-10 lg:py-18 relative overflow-x-hidden">
         <SectionTitle
           title="Latest jobs"
           link="/jobs"
@@ -53,7 +52,7 @@ const LatestJobs = async ({
 }) => {
   const jobs = await jobPromise;
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 py-5 md:py-8 lg:py-10 z-20">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 py-5 md:py-8 lg:py-12 z-20">
       {jobs?.data?.data?.map((job) => {
         const {
           _id,
@@ -66,8 +65,9 @@ const LatestJobs = async ({
         } = job;
 
         const { title: categoryTitle, className } =
-          jobsCategories.find((cat) => cat.title === category) || {};
+          jobsCategories.find((cat) => cat.title.toUpperCase() == category) || {};
 
+          
         return (
           <Link href={`/jobs/${_id}`} key={job?._id}>
             <div className="bg-white relative z-10 flex flex-row items-center gap-x-5 px-6 py-4 duration-200">
@@ -84,17 +84,17 @@ const LatestJobs = async ({
 
               {/* Info */}
               <div className="flex flex-col gap-y-1 flex-1">
-                <h3 className="font-epilogue font-semibold text-base text-neutral">
+                <h3 className=" font-semibold text-base text-neutral">
                   {title}
                 </h3>
-                <p className="font-epilogue text-sm text-neutral/80">
+                <p className=" text-sm text-neutral/80">
                   {company} &nbsp;·&nbsp; {division}
                 </p>
 
                 {/* Tags row */}
                 <div className="flex flex-row items-center gap-x-2 mt-1">
                   {/* Job type pill — no border, soft bg */}
-                  <span className="font-epilogue font-medium text-xs text-teal-500 border border-teal-100 px-3 py-1 rounded-full">
+                  <span className=" font-medium text-xs text-teal-500 border border-teal-100 px-3 py-1 rounded-full">
                     {job_type}
                   </span>
 
@@ -103,7 +103,7 @@ const LatestJobs = async ({
 
                   {/* Extra tags */}
                   <span
-                    className={`text-xs font-medium font-epilogue px-3 py-1 rounded-full ${className}`}
+                    className={`text-xs font-medium  px-3 py-1 rounded-full ${className}`}
                   >
                     {categoryTitle}
                   </span>
