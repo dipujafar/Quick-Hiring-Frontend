@@ -1,8 +1,8 @@
 import Container from "@/components/shared/Container";
 import SectionTitle from "@/components/shared/SectionTitle";
-import CategoryCard from "./CategoryCard";
 import { TCategory } from "@/types";
 import {  jobsCategories } from "@/utils/data";
+import CategoryCard from "./CategoryCard";
 
 export default function Category() {
   return (
