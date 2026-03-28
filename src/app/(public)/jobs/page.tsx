@@ -81,7 +81,7 @@ async function JobsPage({
     query.education = education;
   }
   if (searchTerm) {
-    query.searchTerms = searchTerm;
+    query.searchTerm = searchTerm;
   }
   if (category) {
     query.category = category;

@@ -19,7 +19,7 @@ async function ApplicationPage({
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const query: any = { page: page ?? 1, limit }
   if (searchTerm) {
-    query.searchTerms = searchTerm
+    query.searchTerm = searchTerm
   }
 
   const applicationPromise = GetApplications({ query });
